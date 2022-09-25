@@ -14,12 +14,18 @@ class ShoesViewModel : ViewModel() {
     val shoes: LiveData<List<Shoe>>
         get() = _shoes
 
+    private var _shoe = MutableLiveData(Shoe())
+    val shoe: LiveData<Shoe>
+        get() = _shoe
 
-    fun onSave(name: String, company: String, size: Double, description: String) {
-        val newItem = Shoe(name, size, company, description)
-        newItem.let { item ->
-            _shoeList.add(item)
+
+    fun onSave() {
+
+        _shoe.value?.let {
+            _shoeList.add(it)
             _shoes.value = _shoeList
         }
+        _shoe = MutableLiveData(Shoe())
+
     }
 }

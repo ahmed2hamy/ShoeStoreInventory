@@ -1,9 +1,9 @@
 package com.udacity.shoestoreinventory.features.shoes
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.udacity.shoestoreinventory.R
 import com.udacity.shoestoreinventory.databinding.FragmentShoesBinding
@@ -42,6 +42,10 @@ class ShoesFragment : Fragment() {
             shoes.forEach { shoe ->
                 val shoeDetailsBinding: ShoeDetailsBinding =
                     ShoeDetailsBinding.inflate(inflater, container, false)
+                shoe.name = shoe.name ?: ""
+                shoe.company = shoe.company ?: ""
+                shoe.size = shoe.size ?: 0.0
+                shoe.description = shoe.description ?: ""
                 shoeDetailsBinding.shoe = shoe
                 binding.shoeList.addView(shoeDetailsBinding.root)
             }

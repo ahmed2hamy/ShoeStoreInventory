@@ -15,9 +15,11 @@
         <entry key="..\:/Users/Ahmed Tohamy/StudioProjects/Android/ShoeStoreInventory/app/src/main/res/menu/logout_menu.xml" value="0.1574074074074074" />
         <entry key="..\:/Users/Ahmed Tohamy/StudioProjects/Android/ShoeStoreInventory/app/src/main/res/menu/menu.xml" value="0.24166666666666667" />
         <entry key="..\:/Users/Ahmed Tohamy/StudioProjects/Android/ShoeStoreInventory/app/src/main/res/menu/shoe_details_actions_menu.xml" value="0.16111111111111112" />
+        <entry key="app/src/main/res/layout/fragment_shoes.xml" value="0.2864583333333333" />
+        <entry key="app/src/main/res/layout/shoe_details.xml" value="0.2864583333333333" />
       </map>
     </option>
   </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="11" project-jdk-type="JavaSDK" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK" />
 </project>

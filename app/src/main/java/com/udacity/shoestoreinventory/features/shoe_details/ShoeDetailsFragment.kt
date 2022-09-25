@@ -23,16 +23,13 @@ class ShoeDetailsFragment : Fragment() {
     ): View {
         _binding = FragmentShoeDetailsBinding.inflate(inflater, container, false)
 
+        sharedShoesViewModel = ViewModelProvider(requireActivity())[ShoesViewModel::class.java]
+
+        binding.viewModel = sharedShoesViewModel
+
         setHasOptionsMenu(true)
 
         return binding.root
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        sharedShoesViewModel = ViewModelProvider(requireActivity())[ShoesViewModel::class.java]
-
-
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
@@ -43,13 +40,7 @@ class ShoeDetailsFragment : Fragment() {
 
     override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
         R.id.action_save -> {
-            val sizeString: String = binding.shoeSizeEditText.text.toString()
-            sharedShoesViewModel.onSave(
-                name = binding.shoeNameEditText.text.toString(),
-                company = binding.companyEditText.text.toString(),
-                size = if (sizeString.isNotEmpty()) sizeString.toDouble() else 0.0,
-                description = binding.descriptionEditText.text.toString(),
-            )
+            sharedShoesViewModel.onSave()
             findNavController().popBackStack()
             true
         }

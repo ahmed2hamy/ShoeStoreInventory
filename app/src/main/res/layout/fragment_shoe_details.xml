@@ -3,6 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+
+        <import type="com.udacity.shoestoreinventory.converters.DoubleConverter" />
+
+        <variable
+            name="viewModel"
+            type="com.udacity.shoestoreinventory.features.shoes.ShoesViewModel" />
+    </data>
+
 
     <ScrollView
         android:layout_width="match_parent"
@@ -41,6 +50,7 @@ Constraints layout to use the power of chaining
                 android:hint="@string/shoe_name"
                 android:inputType="text"
                 android:minHeight="48dp"
+                android:text="@={viewModel.shoe.name}"
 
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/show_details_text" />
@@ -56,6 +66,7 @@ Constraints layout to use the power of chaining
                 android:hint="@string/company"
                 android:inputType="text"
                 android:minHeight="48dp"
+                android:text="@={viewModel.shoe.company}"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/shoe_name_edit_text" />
 
@@ -70,6 +81,7 @@ Constraints layout to use the power of chaining
                 android:hint="@string/shoe_size"
                 android:inputType="number"
                 android:minHeight="48dp"
+                android:text="@={DoubleConverter.doubleToString(viewModel.shoe.size)}"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/company_edit_text" />
 
@@ -84,6 +96,7 @@ Constraints layout to use the power of chaining
                 android:hint="@string/description"
                 android:inputType="textPersonName"
                 android:minHeight="48dp"
+                android:text="@={viewModel.shoe.description}"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/shoe_size_edit_text" />
         </androidx.constraintlayout.widget.ConstraintLayout>
